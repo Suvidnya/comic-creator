@@ -5,7 +5,7 @@ import DomToImage from 'dom-to-image';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const Display = ({ showdisplay, formTexts }) => {
+export const Display = ({ apiResponses, setApiResponses, showdisplay, formTexts }) => {
   const [apiResponses, setApiResponses] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Start loading initially
   const [imagesLoaded, setImagesLoaded] = useState(0); // Track the number of loaded images
@@ -39,12 +39,12 @@ export const Display = ({ showdisplay, formTexts }) => {
 // ];
 const sample = [
   "https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://media.istockphoto.com/id/1336676613/vector/halloween-party-colorful-vintage-poster.jpg?s=1024x1024&w=is&k=20&c=8w8js5SCdemAnoI9dhBxb9CXwNluomM_0gp5N_rR5tQ=",
-  "https://images.unsplash.com/photo-1606489129187-1eee19a0a103?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1620336655055-088d06e36bf0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1623984109622-f9c970ba32fc?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1593067401452-a1ac88689702?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1509347528160-9a9e33742cdb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1666900553731-2525ccd6941a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1635805739892-ab7b431400f7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1635805737707-575885ab0820?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1571781565036-d3f759be73e4?q=80&w=1826&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1521714161819-15534968fc5f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1515734392280-e60c25eb9f01?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1505925456693-124134d66749?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1524481905007-ea072534b820?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1534375971785-5c1826f739d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -134,6 +134,30 @@ const sample = [
     }
   };
 
+   const downloadComicmain = () => {
+
+// -----------------------------------------------------
+// TESTING
+// return;
+    if (imagesLoaded === apiResponses.length) {
+      const container = document.querySelector('.flex-containermain');
+
+      if (container) {
+        DomToImage.toBlob(container)
+          .then(function (blob) {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'comic.png';
+            link.click();
+          });
+      }
+    } else {
+      toast.error('Wait for all panels to load before downloading the comic.', {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
+  };
+
   const handlesample = () =>{
     setshowsample(!showsample);
     }
@@ -158,7 +182,7 @@ const sample = [
 
     {checklength() && (
           <div className='buttons'>
-            <button className = "btn sharemain" type = "button" onClick={downloadComic} disabled={imagesLoaded !== 10}>Share Comic</button>
+            <button className = "btn sharemain" type = "button" onClick={downloadComicmain} disabled={imagesLoaded !== 10}>Share Comic</button>
           </div>
         )}  
       </div>
