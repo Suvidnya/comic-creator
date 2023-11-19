@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Main() {
   const [formTexts, setFormTexts] = useState(Array(10).fill(''));
   const [showdisplay, setshowdisplay] = useState(false);
+  const [apiResponses, setApiResponses] = useState([]);
   // const history = useHistory();
 
   const handleFormSubmit = async (event) => {
@@ -41,6 +42,7 @@ function Main() {
     event.preventDefault();
     setshowdisplay(false);
     setFormTexts(Array(10).fill(''));
+    setApiResponses([]);
     // history.push('/');
   }
 
@@ -52,7 +54,7 @@ function Main() {
         <Form formTexts={formTexts} setFormTexts={setFormTexts} onSubmit={handleFormSubmit} handlereset={handlereset} />
       </div>
       <div className="divcontainer">
-        <Display showdisplay={showdisplay} formTexts={formTexts} />
+        <Display apiResponses={apiResponses} setApiResponses={setApiResponses} showdisplay={showdisplay} formTexts={formTexts} />
       </div>
     </div>
   );
