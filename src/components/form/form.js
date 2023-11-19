@@ -24,7 +24,7 @@ export const Form = ({ formTexts, setFormTexts, onSubmit, handlereset }) => {
               value={text}
               onChange={(e) => handleTextChange(index, e.target.value)}
               autoComplete='on'
-              placeholder={`Describe the Scene ${index + 1}`}
+              placeholder={`Describe Scene ${index + 1} for the comic`}
             />
           </div>
         ))}
