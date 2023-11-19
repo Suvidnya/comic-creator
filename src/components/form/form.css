@@ -1,0 +1,131 @@
+/* form.css */
+
+.comic-form-container {
+  display: flex;
+  justify-content: center !important;
+  width: 80vw !important;
+  background-color: #ededed;
+  padding: 2vw;
+  padding-bottom: 1.7vw !important;
+  border-radius: 15px;
+  margin-bottom: 0 !important;
+}
+
+.comic-form {
+  width: 90%;
+  margin-top: 5px;
+  max-width: 800px; /* Increased max-width for larger screens */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.reset{
+  margin-left: 10px;
+  background-color: red !important;
+  border: none !important;
+  color: white !important;
+  width: 37% !important;
+}
+.form-row {
+  width: 50%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 0px; /* Reduce the margin between two rows of inputs */
+  display: flex;
+  display: inline block;
+}
+
+/* Adjust width and change input to textarea for larger screens */
+@media (min-width: 500px) {
+  .form-row {
+    width: 48%; /* Adjusted width to fit two inputs side by side */
+    margin-right: 4%; /* Add some spacing between inputs */
+  }
+
+  .form-row:nth-child(even) {
+    margin-right: 0; /* Remove margin for even rows to prevent extra spacing */
+  }
+
+  .form-row textarea {
+    width: 100%;
+    resize: none; /* Disable the ability to resize the textarea */
+    border: 1px solid #ddd; /* Add a border for aesthetic look */
+    padding: 8px; /* Add padding for a neat appearance */
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    width: 80%;
+  }
+
+  .form-row textarea {
+    width: 100%;
+    resize: none; /* Disable the ability to resize the textarea */
+    border: 1px solid #ddd; /* Add a border for aesthetic look */
+    padding: 8px; /* Add padding for a neat appearance */
+    box-sizing: border-box;
+  }
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.generate {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 16px; /* Add some spacing between inputs and button */
+  border-radius: 15px;
+}
+
+.generate:hover {
+  background-color: #45a049;
+}
+
+
+textarea::placeholder {
+  color: #a0a0a0; /* Set placeholder text color */
+  font-size: 0.7rem; /* Set font size for the placeholder text */
+  font-style: italic; /* Set font style for the placeholder text */
+  /* Add any additional styling as needed */
+}
+
+
+/* Comic-style button */
+.comic-button {
+  width: 100%;
+  margin-top: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: #ffcc00; /* Yellow background */
+  color: #000000; /* Dark text color */
+  border: 2px solid #ffcc00; /* Yellow border *
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition effect */
+
+  /* Add any additional styling for a comic-like appearance */
+  font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans MS font or a similar comic-style font */
+}
+
+/* Hover effect with smooth transition */
+.comic-button:hover {
+  background-color: #222; /* Dark background on hover */
+  color: #ffcc00; /* Yellow text on hover */
+  border-color: #222; /* Dark border on hover */
+  transform: scale(1.05); /* Scale the button slightly on hover */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s; /* Smooth transition effect for all properties */
+}

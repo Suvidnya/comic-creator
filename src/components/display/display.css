@@ -1,0 +1,198 @@
+.flex-container {
+    display: flex;
+    gap: 10px; /* Adjust the gap between items as needed */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed */
+    background-color:#ededed;
+    padding: 5vh;
+    /* border-radius: 15px; */
+  }
+.flex-containermain {
+    display: flex;
+    gap: 10px; /* Adjust the gap between items as needed */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust as needed */
+    background-color:#ededed;
+    padding: 5vh;
+    /* border-radius: 15px; */
+  }
+  
+  .flex-item {
+    /* Add any additional styling for each item */
+    /* border: 1px solid #ddd; */
+    overflow: hidden; /* Ensure the border-radius is applied to the image */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+    width: calc(20% - 10px); /* Adjust the fixed width and gap as needed */
+    height: 200px; /* Adjust the fixed height as needed */
+    margin-bottom: 5px; /* Adjust the margin between rows as needed */
+    margin-right: 10px; /* Adjust the margin between items in the same row as needed */
+    /* border: 7px solid black; */
+    border: solid black;
+  border-color: black;
+    border-width: 3px 4px 3px 5px;
+  border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+  transform: rotate(2deg);
+
+    /* border-radius: 15px 225px 15px 255px/255px 15px 225px 15px; */
+    /* border:solid 3px rgb(0, 0, 0); */
+  }
+  .flex-itemmain {
+    /* Add any additional styling for each item */
+    /* border: 1px solid #ddd; */
+    overflow: hidden; /* Ensure the border-radius is applied to the image */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+    width: calc(20% - 10px); /* Adjust the fixed width and gap as needed */
+    height: 200px; /* Adjust the fixed height as needed */
+    margin-bottom: 5px; /* Adjust the margin between rows as needed */
+    margin-right: 10px; /* Adjust the margin between items in the same row as needed */
+    /* border: 7px solid black; */
+    border: solid black;
+  border-color: black;
+    border-width: 3px 4px 3px 5px;
+  border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+  transform: rotate(2deg);
+
+    /* border-radius: 15px 225px 15px 255px/255px 15px 225px 15px; */
+    /* border:solid 3px rgb(0, 0, 0); */
+  }
+  
+  /* Set margin-right for all items except the last one in each row */
+  .flex-item:not(:last-child) {
+    margin-right: 10px;
+     /* Adjust the margin between items in the same row as needed */
+  }
+  .flex-itemmain:not(:last-child) {
+    margin-right: 10px;
+     /* Adjust the margin between items in the same row as needed */
+  }
+  
+  /* For large screens - 5 items in each row */
+  @media (min-width: 1200px) {
+    .flex-item {
+      width: 16vw; /* Adjust the fixed width as needed */
+      height: 16vw; /* Adjust the fixed height as needed */
+    }
+  }
+  
+  /* For medium screens - 3 items in each row */
+  @media (max-width: 1199px) and (min-width: 351px) {
+    .flex-item {
+      width: 22vw; /* Adjust the fixed width as needed */
+      height: 22vw; /* Adjust the fixed height as needed */
+    }
+  }
+  
+  /* For small screens - 2 items in each row */
+  @media (max-width: 350px) {
+    .flex-item {
+      width: 23vw; /* Adjust the fixed width as needed */
+      height: 23vw; /* Adjust the fixed height as needed */
+    }
+  }
+  @media (min-width: 1200px) {
+    .flex-itemmain {
+      width: 16vw; /* Adjust the fixed width as needed */
+      height: 16vw; /* Adjust the fixed height as needed */
+    }
+  }
+  
+  /* For medium screens - 3 items in each row */
+  @media (max-width: 1199px) and (min-width: 351px) {
+    .flex-itemmain {
+      width: 22vw; /* Adjust the fixed width as needed */
+      height: 22vw; /* Adjust the fixed height as needed */
+    }
+  }
+  
+  /* For small screens - 2 items in each row */
+  @media (max-width: 350px) {
+    .flex-itemmain {
+      width: 23vw; /* Adjust the fixed width as needed */
+      height: 23vw; /* Adjust the fixed height as needed */
+    }
+  }
+
+  .btn {
+    width: 200px;
+    margin-top: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: #000000; /* Yellow background */
+    color: white; /* Dark text color */
+    border: 2px solid #000000; /* Yellow border *
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition effect */
+  
+    /* Add any additional styling for a comic-like appearance */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans MS font or a similar comic-style font */
+  }
+  
+  /* Hover effect with smooth transition */
+  .btn:hover {
+   
+    transform: scale(1.05); /* Scale the button slightly on hover */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.3s; /* Smooth transition effect for all properties */
+  }
+  
+
+  .buttons{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn:disabled {
+    cursor: not-allowed;
+  }
+
+  .annotation-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust background color and opacity as needed */
+    text-align: center;
+  }
+  
+  .annotation-text {
+    margin: 0;
+    padding: 8px; /* Adjust padding as needed */
+  }
+
+  .center-button {
+    text-align: center;
+    margin-top: 0 !important; /* Adjust the margin as needed */
+    margin-bottom: 20px;
+  }
+  
+
+  .sample{
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px !important;
+    margin-top: 0 !important;
+  }
+
+  .sample:hover{
+    background-color: black;
+    color: white;
+  }
+
+  .sharemain{
+    margin-bottom: 10px;
+  }
+
+  #wait{
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    /* font-weight: 700  ; */
+  }
