@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const Display = ({ apiResponses, setApiResponses, showdisplay, formTexts }) => {
-  const [apiResponses, setApiResponses] = useState([]);
   const [isLoading, setIsLoading] = useState(true); // Start loading initially
   const [imagesLoaded, setImagesLoaded] = useState(0); // Track the number of loaded images
   const [showsample, setshowsample] = useState(false);
