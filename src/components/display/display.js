@@ -167,8 +167,8 @@ const sample = [
     
      {showdisplay && (
        <div className="image-containermain testcontainermain">
-         {isLoading ? (
-          <p id="wait">Wait until your comic is getting generated ...</p>
+         {(apiResponses.length != 10) ? (
+          <p id="wait">The comic is getting generated ...</p>
         ) : (<p></p>)}
 
     <div  className='flex-containermain'>
